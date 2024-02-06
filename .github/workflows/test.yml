@@ -2,9 +2,9 @@ name: Run all tests
 
 on:
   push:
-    branches: [ master ]
+    branches: *
   pull_request:
-    branches: [ master ]
+    branches: *
   workflow_dispatch:
 
 jobs:
@@ -25,5 +25,5 @@ jobs:
 
       - name: Execute all tests
         run: npm test
-        env: 
+        env:
           APPLITOOLS_API_KEY: ${{ secrets.APPLITOOLS_API_KEY }}
